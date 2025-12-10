@@ -21,13 +21,16 @@ func main() {
 		fmt.Print("Pilihan: ")
 		pilih := 0
 		fmt.Scan(&pilih)
+		fmt.Println()
 
 		if pilih == 1 {
 			// Input mahasiswa
 			var tempNama string
 			var tempNIM string
 			var tempNilai float64
-
+			fmt.Println("===============================================")
+			fmt.Println("|| GANTI SPASI DENGAN SIMBOL _ (GARIS BAWAH) ||")
+			fmt.Println("===============================================\n")
 			fmt.Print("Nama   : ")
 			fmt.Scan(&tempNama)
 
