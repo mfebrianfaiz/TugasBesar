@@ -7,6 +7,7 @@ func main() {
 	var nama []string
 	var nilai []float64
 	var lulus []bool
+	var Prodi []string
 	var jumlahMahasiswa int = 0
 
 	for {
@@ -21,13 +22,14 @@ func main() {
 		fmt.Print("Pilihan: ")
 		pilih := 0
 		fmt.Scan(&pilih)
-		fmt.Println()
 
 		if pilih == 1 {
 			// Input mahasiswa
 			var tempNama string
 			var tempNIM string
+			var tempProdi string
 			var tempNilai float64
+
 			fmt.Println("===============================================")
 			fmt.Println("|| GANTI SPASI DENGAN SIMBOL _ (GARIS BAWAH) ||")
 			fmt.Println("===============================================\n")
@@ -37,12 +39,16 @@ func main() {
 			fmt.Print("NIM    : ")
 			fmt.Scan(&tempNIM)
 
+			fmt.Print("Prodi  : ")
+			fmt.Scan(&tempProdi)
+
 			fmt.Print("Nilai  : ")
 			fmt.Scan(&tempNilai)
 
 			// Simpan ke slice
 			nama = append(nama, tempNama)
 			nim = append(nim, tempNIM)
+			Prodi = append(Prodi, tempProdi)
 			nilai = append(nilai, tempNilai)
 
 			// Tentukan kelulusan
@@ -58,8 +64,8 @@ func main() {
 		} else if pilih == 2 {
 			fmt.Println("\n=== DATA MAHASISWA ===")
 			for i := 0; i < jumlahMahasiswa; i++ {
-				fmt.Printf("Nama : %s | NIM : %s | Nilai : %.2f | Lulus: %t\n",
-					nama[i], nim[i], nilai[i], lulus[i])
+				fmt.Printf("Nama : %s | NIM : %s | Prodi : %s | Nilai : %.2f | Lulus: %t\n",
+					nama[i], nim[i], Prodi[i], nilai[i], lulus[i])
 			}
 			fmt.Println()
 
@@ -68,18 +74,18 @@ func main() {
 			fmt.Print("Masukkan NIM yang dicari: ")
 			fmt.Scan(&cari)
 
-			found := false
+			Tentukan := false
 			for i := 0; i < jumlahMahasiswa; i++ {
 				if nim[i] == cari {
 					fmt.Println("Data ditemukan!")
-					fmt.Printf("Nama : %s | NIM : %s | Nilai : %.2f | Lulus : %t\n",
-						nama[i], nim[i], nilai[i], lulus[i])
-					found = true
+					fmt.Printf("Nama : %s | NIM : %s | Prodi : %s | Nilai : %.2f | Lulus: %t\n",
+						nama[i], nim[i], Prodi[i], nilai[i], lulus[i])
+					Tentukan = true
 					break
 				}
 			}
 
-			if !found {
+			if !Tentukan {
 				fmt.Println("Data tidak ditemukan.")
 			}
 			fmt.Println()
@@ -98,13 +104,13 @@ func main() {
 			fmt.Println()
 
 		} else if pilih == 5 {
-			count := 0
+			Hitung := 0
 			for i := 0; i < jumlahMahasiswa; i++ {
 				if lulus[i] {
-					count++
+					Hitung++
 				}
 			}
-			fmt.Println("Jumlah mahasiswa yang lulus:", count)
+			fmt.Println("Jumlah mahasiswa yang lulus:", Hitung)
 			fmt.Println()
 
 		} else if pilih == 6 {
