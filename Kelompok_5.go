@@ -22,6 +22,7 @@ func main() {
 		fmt.Print("Pilihan: ")
 		pilih := 0
 		fmt.Scan(&pilih)
+		fmt.Println()
 
 		if pilih == 1 {
 			// Input mahasiswa
