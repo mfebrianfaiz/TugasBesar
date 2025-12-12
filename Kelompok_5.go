@@ -25,7 +25,7 @@ func main() {
 		fmt.Println()
 
 		if pilih == 1 {
-			// Input mahasiswa
+
 			var tempNama string
 			var tempNIM string
 			var tempProdi string
@@ -46,13 +46,11 @@ func main() {
 			fmt.Print("Nilai  : ")
 			fmt.Scan(&tempNilai)
 
-			// Simpan ke slice
 			nama = append(nama, tempNama)
 			nim = append(nim, tempNIM)
 			Prodi = append(Prodi, tempProdi)
 			nilai = append(nilai, tempNilai)
 
-			// Tentukan kelulusan
 			if tempNilai >= 60 {
 				lulus = append(lulus, true)
 			} else {
